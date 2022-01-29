@@ -2,3 +2,6 @@
 * **brute force**
 * use hashmap to store all array values and the numbers in the given [1, n] range aren't in the hashmap are part of the disappeared numbers list
 * **using a set here is better since we don't care about duplicate values**
+​
+* **Optimal solution**
+* notice mapping... all numbers in array are in range [1, n] & array indices are [0, n -1]

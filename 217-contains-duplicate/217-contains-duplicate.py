@@ -16,7 +16,10 @@ class Solution(object):
         #sorting
         #time: O(nlogn + n) --> O(nlogn)
         #space: O(1)
+        
+        # sorting means any dups will be next to each other in the array
         nums.sort()
+        # so we can compare adjacent elements (make sure loop stops at len - 1 since we're looking ahead by 1 index)
         for i in range(len(nums) - 1):
             if nums[i] == nums[i + 1]:
                 return True

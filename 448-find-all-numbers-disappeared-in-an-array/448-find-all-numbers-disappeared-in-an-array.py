@@ -34,7 +34,9 @@ class Solution(object):
         #space: O(1) (output array doesn't count)
         res = []
         for num in nums:
+            # calculate and adjust the index 
             nums[abs(num) - 1] = abs(nums[abs(num) - 1]) * -1
+        # pass thru the array again and any positive values that are left indicate that index + 1 is a disappeared number
         for i, val in enumerate(nums):
             if val > 0:
                 res.append(i + 1)

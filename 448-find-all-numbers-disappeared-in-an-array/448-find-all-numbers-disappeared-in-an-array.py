@@ -3,35 +3,35 @@ class Solution(object):
         #hashmap
         #time: O(2n) --> O(n)
         #space: O(n)
-#         res = []
-#         n = len(nums)
-#         # use dictionary to store all numbers in array
-#         tracker = dict()
-#         for num in nums:
-#             tracker[num] = True
-#         # iterate thru specified [1, n] range and whatever's not in the tracker must not have been in the array
-#         for i in range(1, n + 1):
-#             if i not in tracker:
-#                 res.append(i)
-#         return res
+        res = []
+        n = len(nums)
+        # use dictionary to store all numbers in array
+        tracker = dict()
+        for num in nums:
+            tracker[num] = True
+        # iterate thru specified [1, n] range and whatever's not in the tracker must not have been in the array
+        for i in range(1, n + 1):
+            if i not in tracker:
+                res.append(i)
+        return res
     
-#         #set (same as hashmap just cleaner)
-#         #time: O(2n) --> O(n)
-#         #space: O(n)
-#         res = []
-#         n = len(nums)
-#         tracker = set(nums)
-#         for i in range(1, n + 1):
-#             if i not in tracker:
-#                 res.append(i)
-#         return res
-    
-#         #set (one-liner version)
-#         return set(range(1, len(nums) + 1)) - set(nums)
-    
-        #in-place
+        #set (same as hashmap just cleaner)
         #time: O(2n) --> O(n)
-        #space: O(1) (output array doesn't count)
+        #space: O(n)
+        res = []
+        n = len(nums)
+        tracker = set(nums)
+        for i in range(1, n + 1):
+            if i not in tracker:
+                res.append(i)
+        return res
+    
+        #set (one-liner version)
+        return set(range(1, len(nums) + 1)) - set(nums)
+    
+        # in-place
+        # time: O(2n) --> O(n)
+        # space: O(1) (output array doesn't count)
         res = []
         for num in nums:
             # calculate and adjust the index 

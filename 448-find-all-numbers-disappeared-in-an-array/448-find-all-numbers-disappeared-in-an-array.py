@@ -1,4 +1,3 @@
-# neetcode: https://www.youtube.com/watch?v=8i-f24YFWC4
 class Solution(object):
     def findDisappearedNumbers(self, nums):
         #hashmap

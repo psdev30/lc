@@ -15,13 +15,18 @@ class Solution(object):
         #         res.append(i)
         # return res
     
-        #set
-        res = []
-        n = len(nums)
-        tracker = set(nums)
-        for i in range(1, n + 1):
-            if i not in tracker:
-                res.append(i)
-        return res
+        #set (same as hashmap just cleaner)
+        #time: O(2n) --> O(n)
+        #space: O(n)
+        # res = []
+        # n = len(nums)
+        # tracker = set(nums)
+        # for i in range(1, n + 1):
+        #     if i not in tracker:
+        #         res.append(i)
+        # return res
+    
+        #set one-liner
+        return set(range(1, len(nums) + 1)) - set(nums)
         
         

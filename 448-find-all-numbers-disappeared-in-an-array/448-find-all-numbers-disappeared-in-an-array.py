@@ -30,6 +30,8 @@ class Solution(object):
 #         return set(range(1, len(nums) + 1)) - set(nums)
     
         #in-place
+        #time: O(2n) --> O(n)
+        #space: O(1) (output array doesn't count)
         res = []
         for num in nums:
             nums[abs(num) - 1] = abs(nums[abs(num) - 1]) * -1

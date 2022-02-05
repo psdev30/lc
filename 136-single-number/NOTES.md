@@ -1,1 +1,2 @@
-​
+#math
+* just like with missing number where you took the set of numbers from 0 --> n and subtracted the actual sum to find the missing number, single number is the same concept but doubled since each number appears twice, so it's 2 * (set(sum(nums)) - sum(nums)

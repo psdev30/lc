@@ -1,5 +1,9 @@
 class Solution(object):
     def maxProfit(self, prices):
+        #two pointers
+        #time: O(n)
+        #space: O(1)
+        
         if len(prices) < 2:
             return 0
         

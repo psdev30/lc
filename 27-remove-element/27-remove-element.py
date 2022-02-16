@@ -12,6 +12,9 @@ class Solution(object):
         return k
     
         #optimal
+        #time: O(n)
+        #space: O(1)
+        
         end = len(nums) - 1
         k = 0
         while k < end:

@@ -1,5 +1,9 @@
 class Solution(object):
-    def searchInsert(self, nums, target):     
+    def searchInsert(self, nums, target):
+        #binary search
+        #time: O(logn)
+        #space: O(1)
+        
         lo = 0
         hi = len(nums) - 1
         

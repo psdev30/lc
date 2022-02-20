@@ -1,17 +1,31 @@
 class Solution(object):
     def romanToInt(self, s):
-        #even cleaner solution
-        roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        total = roman[s[len(s) - 1]]
-        for i in range(len(s) - 2, -1, -1):
-            if roman[s[i]] < roman[s[i + 1]]:
-                total -= roman[s[i]]
+        # right -> left pass
+        #time: O(1) (same as below)
+        #space: O(1)
+        # roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        # total = roman[s[len(s) - 1]]
+        # for i in range(len(s) - 2, -1, -1):
+        #     if roman[s[i]] < roman[s[i + 1]]:
+        #         total -= roman[s[i]]
+        #     else:
+        #         total += roman[s[i]]
+        # return total
+    
+        # left -> right pass improved
+        roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000, 'IV': 4, 'IX': 9,                     'XL': 40, 'XC': 90, 'CD': 400, 'CM': 900
+                }
+        total = i = 0
+        while i < len(s):
+            if i + 1 < len(s) and (s[i] + s[i + 1]) in roman:
+                total += roman[s[i] + s[i + 1]]
+                i += 1
             else:
                 total += roman[s[i]]
+            i += 1
         return total
         
-        
-        #better solution
+        #left -> right pass better solution
         #time: O(1) (same as below)
         #space: O(1)
         # roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
@@ -26,7 +40,7 @@ class Solution(object):
         # return total
         
         
-        #hashmap (the toxic af one lmao)
+        #left -> right pass (the toxic af one lmao)
         #time: O(1) (max characters limited to 15 according to constraints)
         #space: O(1)
         # roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}

@@ -1,19 +1,11 @@
 class Solution(object):
     def maxProfit(self, prices):
-        #two pointers
-        #time: O(n)
-        #space: O(1)
-        
-        if len(prices) < 2:
-            return 0
-        
         maxProfit = 0
-        smallestBuy = float('inf')
-        for price in prices:
-            if price < smallestBuy:
-                smallestBuy = price
+        buy = prices[0]
+        for i in range(1, len(prices)):
+            if prices[i] < buy:
+                buy = prices[i]
             else:
-                maxProfit = max(maxProfit, price - smallestBuy)
-            
-        return maxProfit            
+                maxProfit = max(maxProfit, prices[i] - buy)
+        return maxProfit
         

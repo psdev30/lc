@@ -5,7 +5,7 @@ class Solution(object):
         for windowEnd in range(len(s)):
             letter = s[windowEnd]
             letterTracker[letter] = letterTracker.get(letter, 0) + 1
-            if len(letterTracker) > k:
+            while len(letterTracker) > k:
                 leftLetter = s[windowStart]
                 letterTracker[leftLetter] -= 1
                 if letterTracker[leftLetter] == 0:

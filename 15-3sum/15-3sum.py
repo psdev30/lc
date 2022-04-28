@@ -1,23 +1,21 @@
 class Solution(object):
     def threeSum(self, nums):
-        triplets = []
         nums.sort()
-        for i in range(len(nums) - 2):
-            if i > 0 and nums[i] == nums[i - 1]:
-                continue
-            needed = -1 * nums[i]
-            left, right = i + 1, len(nums) - 1
-            while left < right:
-                sum = nums[left] + nums[right]
-                if sum > needed:
-                    right -= 1
-                elif sum < needed:
-                    left += 1
-                else:
-                    triplets.append([nums[i], nums[left], nums[right]])
-                    left += 1
-                    while nums[left] == nums[left - 1] and left < right:
-                        left += 1
+        triplets = []
+        for i in range(len(nums)):
+            if i == 0 or nums[i] != nums[i - 1]:
+                l, r = i + 1, len(nums) - 1
+                while l < r:
+                    sum = nums[i] + nums[l] + nums[r]
+                    if sum > 0:
+                        r -= 1
+                    elif sum < 0:
+                        l += 1
+                    else:
+                        triplets.append([nums[i], nums[l], nums[r]])
+                        l += 1
+                        while l < len(nums) and nums[l] == nums[l - 1]:
+                            l += 1
 
         return triplets
         
